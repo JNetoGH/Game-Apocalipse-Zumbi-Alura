@@ -28,7 +28,7 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        objRigidbody.MovePosition(objRigidbody.position + transform.forward * speed* Time.deltaTime); 
+        objRigidbody.MovePosition(objRigidbody.position + transform.forward * speed * Time.deltaTime); 
     }
     
 }

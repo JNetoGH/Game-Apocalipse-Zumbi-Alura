@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayerMask; // PARA ROTACAO: mascara que guarda a layer do chao
     public bool isPlayerAlive = true; // USADO NO GameController PARA RESETAR O JOGO QUANDO ATINGIDO POR ZUMBI
 
-    
     void Start() // Usei para inicializar as variaveis que guardam os componentes
     {
         playerAnimator = GetComponent<Animator>();
@@ -21,9 +20,11 @@ public class PlayerController : MonoBehaviour
     
     private void MovePlayer() // Move o Player via Rigidbody   
     {
-        Vector3 increment = direction * Time.deltaTime * speed;
+        Vector3 increment = direction * Time.fixedDeltaTime * speed;
         Vector3 newPosition = playerRigidbody.position + increment;
-        playerRigidbody.MovePosition(newPosition);
+
+        playerRigidbody.velocity = increment;
+        //playerRigidbody.MovePosition(newPosition);
     }
     
     private void AnimatePlayer() // Anima o player, manipulando os parametros do Animator Controller.

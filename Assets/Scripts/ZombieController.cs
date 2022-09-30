@@ -62,7 +62,8 @@ public class ZombieController : MonoBehaviour
         }
     }
     
-    void AttackPlayer()  // tem que ter o mesmo nome do evento da animacao, vai ser chamado quando o evento acontecer
+    // tem que ter o mesmo nome do evento da animacao, vai ser chamado quando o evento acontecer
+    void AttackPlayer() 
     {
         player.GetComponent<PlayerController>().isPlayerAlive = false;
     }
